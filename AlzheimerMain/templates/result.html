@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+<title>Results</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+</head>
+
+<html>
+   <body>
+       <h2 style="margin-top: 40px;" class="text-center">Results:</h2>
+        <div style="margin-top: 50px;" class="container">
+            <div class="well well-lg">
+                {% if message %}
+            <h2>The Prediction Result is as Follows</h2>
+            <h3 class="text-center">{{message}}</h3><br> 
+            {% endif %}
+            </div>
+            
+        </div>
+        <div class="text-center">
+        <a href="{{ url_for('prediction_page') }}" class="btn btn-info" role="button">Go Back</a>
+        </div>
+   </body>
+</html>

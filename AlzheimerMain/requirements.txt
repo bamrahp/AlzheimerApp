@@ -1,0 +1,7 @@
+fastai
+flask
+requests
+sklearn
+werkzeug.utils
+sqlite
+joblib

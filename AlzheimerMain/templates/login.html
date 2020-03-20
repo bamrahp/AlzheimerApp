@@ -1,0 +1,78 @@
+<html lang=en>
+<head>
+  <title>Alzheimer's Detection</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="">
+</head>
+<body>
+    <script type="text/javascript">
+        function validate(inputField,msgText)
+     {
+        if(msgText!=null)
+        {
+          console.log("inside")
+           msgText.innerHTML=" ";
+        }
+      return true;
+      }
+  
+        
+        
+    </script>
+    
+    <div class="container-login100" style="background-image:url('static/img/b.jpg') ;height: 100%;min-height: 1000px">
+    <br>
+     <br>
+      <br>
+       
+         <br> <br>
+         
+
+    <div class="vertical-center">
+    
+
+ <br> <br>
+    <div class="container" id="login">
+        <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="well black col-xs-12 col-lg-6 " style="border:1px solid black;" >
+            <h2>Login</h2>
+            <form action="{{ url_for('login') }}" method="POST">
+                {% if msg %}
+                <span style="color:red" id="nm_msg" class="msg" >{{msg}}</span>
+                <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="username" class="form-control" placeholder="Enter your name" required onblur="validate(this,document.getElementById('nm_msg'));"/>
+                </div>
+                {% else %}
+                  <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="username" class="form-control" placeholder="Enter your name" required />
+                </div>
+                {% endif %}
+                
+                <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control" placeholder="***********" required/>
+                </div>
+                 <div class="form-actions">
+                        <button type="submit" class="btn btn-info " name="submit" style="float:center" >SUBMIT</button>
+                    </div>
+            </form>
+            <a href="{{ url_for('signup_form') }}" style=> Create an account  
+            </a>
+        </div>
+        <div class="col-lg-3"></div>
+        </div>
+    </div>
+    </div>
+    </body>
+</html>
